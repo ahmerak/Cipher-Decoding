@@ -8,10 +8,9 @@
 <style>
 body {
   background: black;
-  color: #00ff00;
+  color: #bd3fe0;
   font-family: monospace;
   overflow: hidden;
-  align-items: center;
 }
 
 /* MATRIX BACKGROUND */
@@ -23,15 +22,17 @@ canvas {
 }
 
 #terminal {
-  width: 80%;
+  width: 100%;
   margin: auto;
   margin-top: 40px;
+  text-align: center;
+  font-size: x-large;
 }
 
 input, button {
   background: black;
-  color: #00ff00;
-  border: 1px solid #00ff00;
+  color: #bd3fe0;
+  border: 1px solid #bd3fe0;
   margin-top: 5px;
 }
 
@@ -92,7 +93,7 @@ const ctx = canvas.getContext("2d");
 canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
 
-const letters = "01ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const letters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const fontSize = 14;
 const columns = canvas.width / fontSize;
 
