@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Secure Login</title>
+
+<style>
+body {
+  background:black;
+  color:#00ff00;
+  font-family:monospace;
+  text-align:center;
+  margin-top:100px;
+}
+
+input, button {
+  background:black;
+  color:#00ff00;
+  border:1px solid #00ff00;
+  margin:5px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>> AUTHENTICATION REQUIRED</h2>
+
+<input id="u" placeholder="Username"><br> <input id="p" type="password" placeholder="Password"><br> <button onclick="login()">ENTER</button>
+
+<p id="msg"></p>
+
+<script>
+let tries = 3;
+
+function login() {
+  let user = u.value;
+  let pass = p.value;
+
+  if (user === "admin" && pass === "secret_key") {
+    msg.innerHTML = "> ACCESS GRANTED";
+  } else {
+    tries--;
+    msg.innerHTML = "> ACCESS DENIED (" + tries + " left)";
+    if (tries <= 0) {
+      document.body.innerHTML = "<h1 style='color:red'>LOCKED OUT</h1>";
+    }
+  }
+}
+</script>
+
+</body>
+</html>
